@@ -3,7 +3,11 @@ const { User } = require("../../models");
 
 // GET /api/users
 router.get("/", (req, res) => {
-  User.findAll()
+  User.findAll({
+    attributes: {
+      exclude: ["password"], //do not reurn password in response
+    },
+  })
     .then((dbUserData) => {
       res.json(dbUserData);
     })
@@ -18,6 +22,9 @@ router.get("/:id", (req, res) => {
   User.findOne({
     where: {
       id: req.params.id,
+    },
+    attributes: {
+      exclude: ["password"], //do not reurn password in response
     },
   })
     .then((dbUserData) => {
