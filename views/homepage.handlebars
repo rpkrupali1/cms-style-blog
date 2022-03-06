@@ -1,1 +1,16 @@
-<div>You are on the home page</div>
+{{#each posts as |post|}}
+<li class="post-list">
+  <article class="list">
+    <div class="title">
+      <a href="/post/{{post.id}}">{{post.title}}</a>
+      <div class="meta">
+        Posted by
+        {{post.user.username}}
+        on
+        {{created_at}}
+      </div>
+    </div>
+    <div class="content">{{post.content}}</div>
+  </article>
+</li>
+{{/each}}
