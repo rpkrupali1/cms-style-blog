@@ -104,7 +104,7 @@ router.post("/login", (req, res) => {
   User.findOne({
     where: {
       //email: req.body.email,
-      username: req.body.username
+      username: req.body.username,
     },
   }).then((dbUserData) => {
     if (!dbUserData) {
@@ -114,7 +114,7 @@ router.post("/login", (req, res) => {
     //verify password if data is returned
     const validPassword = dbUserData.checkPassword(req.body.password);
     if (!validPassword) {
-      res.status(404).json({ message: "Email and password does not match" });
+      res.status(404).json({ message: "Username and password does not match" });
       return;
     }
     res.json({
