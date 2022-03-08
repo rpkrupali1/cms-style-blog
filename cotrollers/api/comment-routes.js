@@ -8,19 +8,23 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  Comment.create({
-    comment_text: req.body.comment_text,
-    user_id: req.body.user_id,
-    post_id: req.body.post_id,
-  })
-    .then((dbPostData) => {
-      if (!dbPostData) {
-        res.status(404).json({ err: "Error creating comment" });
-        return;
-      }
-      res.json(dbPostData);
+  if (req.session) {
+    console.log(req.body.comment_text, req.session.user_id, req.body.post_id);
+    Comment.create({
+      comment_text: req.body.comment_text,
+      //user_id: req.body.user_id,
+      user_id: req.session.user_id, //use id from session
+      post_id: req.body.post_id,
     })
-    .catch((err) => res.status(500).json(err));
+      .then((dbPostData) => {
+        if (!dbPostData) {
+          res.status(404).json({ err: "Error creating comment" });
+          return;
+        }
+        res.json(dbPostData);
+      })
+      .catch((err) => res.status(500).json(err));
+  }
 });
 
 router.delete("/:id", (req, res) => {

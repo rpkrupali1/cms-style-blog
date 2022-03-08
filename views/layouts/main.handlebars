@@ -13,16 +13,20 @@
           <a href="/">The Tech Blog</a>
         </h1>
         <nav>
-            <a>Home</a>
-            <a>Dashboard</a>
+          <a>Home</a>
+          <a>Dashboard</a>
+          {{#if loggedIn}}
             <button id="logout" class="btn-no-style">logout</button>
+          {{else}}
             <a href="/login">Login</a>
-        </nav>
+          {{/if}}
         </nav>
       </header>
       <main> {{{body}}}</main>
       <footer>Thank You for visiting Technology blog!</footer>
     </div>
-    <script src="/javascript/logout.js"></script>
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
   </body>
 </html>
