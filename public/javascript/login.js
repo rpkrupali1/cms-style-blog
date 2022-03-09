@@ -13,7 +13,7 @@ async function loginFormHandler(event) {
     });
 
     //check the reponse status
-    if (response.ok) document.location.replace("/");
+    if (response.ok) document.location.replace("/dashboard");
     else alert(response.statusText);
   }
 }
