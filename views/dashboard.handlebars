@@ -1,16 +1,4 @@
-<h1> Your Dasboard</h1>
-<button type="submit" id="new-post" class="button is-primary">+ New Post</button>
-<form class="new-post-form">
-  <div>
-    <label for="post-title">Title</label>
-    <input type="text" id="post-title" name="post-title" />
-  </div>
-  <div>
-    <label for="post-content">Content</label>
-    <textarea id="post-Content"></textarea>
-  </div>
-  <button type="submit" class="btn">Create</button>
-</form>
+<h1> Your Dasboard</h1
 
   {{#if posts.length}}
   <section>
@@ -25,4 +13,35 @@
       </ul>
   </section>
   {{/if}}
+
+<footer>
+  <button class="js-modal-trigger button is-primary" data-target="modal-new-post">
+      + New Post
+  </button>
+</footer>
+
+
+<div id="modal-new-post" class="modal">
+  <div class="modal-background"></div>
+
+  <div class="modal-content">
+    <div class="box">
+      <!-- Your content -->
+      <form class="new-post-form">
+        <div>
+          <label for="post-title">Title</label>
+          <input type="text" id="post-title" name="post-title" />
+        </div>
+        <div>
+          <label for="post-content">Content</label>
+          <textarea id="post-Content"></textarea>
+        </div>
+        <button type="submit" class="btn">Create</button>
+      </form>      
+    </div>
+  </div>
+
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
 <script src="/javascript/add-post.js"></script>
