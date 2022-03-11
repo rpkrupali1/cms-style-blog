@@ -5,21 +5,32 @@
 
 {{#if loggedIn}}
   <form class="comment-form container">
-    <h4 class="is-size-4">Add comment</h4>
-    <div>
-      <textarea name="comment-body"></textarea>
+    <div class="block has-background-dark has-text-grey-lighter">
+      <h2 class="is-size-4">Add comment</h2>
     </div>
-    <div>
-      <button type="submit" class="button is-dark comment-submit">Submit</button>
+    <div class="comment-section">
+      <div>
+        <textarea name="comment-body" class="block"></textarea>
+      </div>
+      <div>
+        <button type="submit" class="button is-dark comment-submit">Submit</button>
+      </div>
     </div>
   </form>
 {{/if}}
 
-<div class="container">
-  <h4 class="is-size-4">Comments</h4>
+<div class="container previous-comments">
+  <div class="block has-background-dark has-text-grey-lighter">
+    <h2 class="is-size-4">Previous Comments</h2>
+  </div>
+  <div class="comment-section">
+    <div class="comments">
+      {{> comments post.comments}}
+    </div>
+  </div>
 </div>
 
-{{> comments post.comments}}
+
 
 {{#if loggedIn}}
   <script src="/javascript/comment.js"></script>

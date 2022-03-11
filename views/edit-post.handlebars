@@ -1,37 +1,44 @@
-<h1>
-  <a href="/dashboard">Your Dasboard</a>
-</h1>
-
-<form class="edit-post-form">
-  <h2>Edit Post</h2>
-  <div>
+<form class="edit-post-form container ">
+  <div class="block has-background-dark has-text-grey-lighter">
+    <h2 class="is-size-4">Edit Post</h2>
+  </div>  
+  <div class="edit-post">
     <label for="post-title">Title</label>
-    <input
+    <input class="box"
       type="text"
       id="post-title"
       name="post-title"
       value="{{post.title}}"
     />
   </div>
-  <div>
+  <div class="edit-post">
     <label for="post-content">Content</label>
-    <textarea id="post-Content">{{post.content}}</textarea>
+    <textarea id="post-Content" class="box">{{post.content}}</textarea>
   </div>
-  <button type="submit" class="btn">Update Post</button>
-  <button type="button" class="delete-post-btn">Delete</button>
+  <div class="buttons">
+      <button type="submit" class="btn button is-dark">Update Post</button>
+  </div>
+  <div class="buttons">
+    <button type="button" class="delete-post-btn button is-dark">Delete</button>
+  </div>  
 </form>
 
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
+<form class="comment-form container">
+  <div class="block has-background-dark has-text-grey-lighter">
+    <h2 class="is-size-4">Comments</h2>
   </div>
-
-  <div>
-    <button type="submit">add comment</button>
+  <div class="comment-section">
+      <div>
+        <textarea name="comment-body" class="box"></textarea>
+      </div>
+      <div>
+        <button type="submit" class="button is-dark add-comment">add comment</button>
+      </div>
+      <div class="comments">
+          {{> comments post.comments}}
+      </div>
   </div>
 </form>
-
-{{> comments post.comments}}
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
