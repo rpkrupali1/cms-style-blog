@@ -46,13 +46,17 @@
   margin-bottom: 15px;
 }
 
+.modal textarea,
 .edit-post textarea,
 .comment-form textarea {
-  min-width: 40%;
   min-height: 100px;
   margin-bottom: 1%;
 }
 
+.modal input,
+.modal textarea,
+.modal .content,
+.modal button,
 .comment-submit {
   margin-bottom: 2%;
 }
@@ -79,7 +83,6 @@ form label {
 }
 
 .previous-comments h2,
-/* .previous-comments .comments, */
 .comment-form h2,
 .comment-section,
 .edit-post-form .buttons,
@@ -89,6 +92,9 @@ form label {
   padding-right: 2%;
 }
 
+.modal input,
+.modal textarea,
+.modal button,
 .comment-form .add-comment,
 .comment-form .comment-submit,
 .comment-section textarea,
