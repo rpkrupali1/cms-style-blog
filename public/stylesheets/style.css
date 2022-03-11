@@ -61,6 +61,8 @@
   margin-bottom: 2%;
 }
 
+.modal input,
+.modal textarea,
 .comment {
   padding: 1%;
   margin-bottom: 1%;
