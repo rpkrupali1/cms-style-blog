@@ -11,21 +11,34 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <h1>
-          <a href="/">The Tech Blog</a>
-        </h1>
-        <nav>
-          <a href="/">Home</a>
-          {{#if loggedIn}}
-            <a href="/dashboard">Dashboard</a>
-            <button id="logout" class="btn-no-style">logout</button>
-          {{else}}
-            <a href="/login">Login</a>
-          {{/if}}
-        </nav>
+      <header class="hero is-small is-dark">
+        <div class="hero-head">
+          <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-menu">
+                <a href="/" class="navbar-item">Home</a>
+                {{#if loggedIn}}
+                <a href="/dashboard" class="navbar-item">Dashboard</a>
+                {{/if}}
+                <div class="navbar-item">
+                  <div class="buttons">
+                    {{#if loggedIn}}
+                      <button id="logout" class="button is-light">logout</button>
+                    {{else}}
+                      <a href="/login" class="button is-light">Login</a>
+                      <a href="/signup" class="button is-primary">Sign up</a>
+                    {{/if}}
+                  </div>
+                </div>
+            </div>
+          </nav>
+          <div class="hero-body">
+            <div class="container has-background-grey-lighter box is-rounded">
+              <a href="/" class="title is-dark">The Tech Blog</a>
+            </div>
+          </div>
+        </div>
       </header>
-      <main> {{{body}}}</main>
+      <main class="has-background-grey-lighter"> {{{body}}}</main>
       <footer>Thank You for visiting Technology blog!</footer>
     </div>
     {{#if loggedIn}}

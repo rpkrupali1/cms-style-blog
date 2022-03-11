@@ -1,16 +1,23 @@
-{{> post-info post}}
+<div class="single-post">
+  {{> post-info post}}
+</div>
+
 
 {{#if loggedIn}}
-  <form class="comment-form">
-    <h4>add comment</h4>
+  <form class="comment-form container">
+    <h4 class="is-size-4">Add comment</h4>
     <div>
       <textarea name="comment-body"></textarea>
     </div>
     <div>
-      <button type="submit">Submit</button>
+      <button type="submit" class="button is-dark comment-submit">Submit</button>
     </div>
   </form>
 {{/if}}
+
+<div class="container">
+  <h4 class="is-size-4">Comments</h4>
+</div>
 
 {{> comments post.comments}}
 
