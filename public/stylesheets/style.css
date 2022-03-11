@@ -71,6 +71,8 @@
   padding-bottom: 2%;
 }
 
+.signup-form,
+.login-form,
 .edit-post-form {
   margin-bottom: 2%;
   margin-top: 2%;
@@ -82,6 +84,8 @@ form label {
   display: block;
 }
 
+.signup-form,
+.login-form,
 .previous-comments h2,
 .comment-form h2,
 .comment-section,
@@ -105,6 +109,8 @@ form label {
   width: 100%;
 }
 
+.signup-form div,
+.login-form div,
 .comment-form,
 .comment-section button,
 .comment-section .comments {
