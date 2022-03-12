@@ -1,3 +1,13 @@
+/* header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+main {
+  padding-top: 200px;
+} */
+
 .edit-post-form,
 .comment-form,
 .previous-comments,

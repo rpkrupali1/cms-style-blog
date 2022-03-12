@@ -13,7 +13,7 @@ async function signupFormHandler(event) {
     });
 
     //check the reponse status
-    if (response.ok) console.log("success");
+    if (response.ok) document.location.replace("/dashboard/");
     else alert(response.statusText);
   }
 }
